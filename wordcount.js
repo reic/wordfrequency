@@ -8,6 +8,8 @@ var keywordCounts=[];
 // datainfile.forEach(function(item){ let txt=item.split('\t').forEach(innerItem=>keywordAll.push(innerItem))});
 datainfile.forEach(item=>keywordAll=keywordAll.concat(item.split('\t')));
 
+// 多欄變單欄
+var colsTocol=(arr,tmp=[])=>{arr.forEach(item=>tmp=tmp.concat(item.split('\t')));return tmp;}
 // 詞頻計算 function
 var Counting=(arr,res=[])=>{arr.forEach(item=>{
 		if (item.length==0) return;
