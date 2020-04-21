@@ -1,6 +1,6 @@
 module.exports = {
    // 輸入資料整理
-   // var dataToArrObj=(arr,tmp=[])=>{arr.forEach(item=>{inner=item.split('\t');tmp.push({name:inner[0],value:inner.slice(1,).join('\t')})});return tmp;}
+   //   ["aaa\tbbb\tccc\tddd"]=>[{name="aaa",value="bbb\tccc\tddd"}]
    dataToArrObj: function(arr, res = []) { 
       arr.forEach(function(item) { 
          inner = item.split('\t');
@@ -10,14 +10,15 @@ module.exports = {
       },
 
    // 多欄變單欄
-   // var colsTocol=(arr,tmp=[])=>{arr.forEach(item=>tmp=tmp.concat(item.split('\t')));return tmp;}
+   // ['abc\tabc\tabc\t','cde\tcde\tcdt']=>[abc,abc,abc,cde,cde,cde]
    colsTocol: function(arr, res = []) { 
       arr.forEach(function(item){
          res = res.concat(item.split('\t'))
       }); 
       return res; },
+
    // 詞頻計算 function
-   // var Counting=(arr,res=[])=>{arr.forEach(item=>{
+   // ['a','a','b'] = >[{name:'a',value=2},{name:'b',value=1}]
    Counting: function(arr, res = []) {
       arr.forEach(function(item) {
          if (item.length == 0) return;
@@ -31,7 +32,7 @@ module.exports = {
    },
 
    // 輸出資料 formating function
-   // var output=(arr,outputstring='')=>{arr.forEach(item=>(outputstring+=item.value+"\t"+item.name+"\n"));return outputstring;}
+   // [{name='aaaa',value=3},{name='bbbb',value=1}]   => string="3\taaaa\n1\tbbbb\n"
    output: function (arr, outputstring = '') {
       arr.forEach(function (item){
          outputstring += item.value + "\t" + item.name + "\n";
@@ -41,7 +42,6 @@ module.exports = {
 
 
    // 將檔案讀入資料，轉為雙詞資料
-   // var Arraytwkeyword=(arr,tmp=[])=>{for (i=0;i<arr.length-1;i++) {
    Arraytwkeyword: function(arr, res = []) {
       for (i = 0; i < arr.length - 1; i++) {
          for (j = i + 1; j < arr.length; j++) {
@@ -50,7 +50,8 @@ module.exports = {
       }
       return res;
    },
-   // refarr [{name:'參考值",value:1}]   sce['條目']
+   // refarr [{name:'參考值",value:'this is a describe may with symbol \t to separate columns'}]   
+   // sce['條目'] 用來和參考值比對，並取得 條目對應的 value ==> like excel vlookup
    // refarr 是參考資料全資料集， sce 情境的條目
    getkeyword: function(refarr, sce, res = []) {
       refarr.forEach(item => {
