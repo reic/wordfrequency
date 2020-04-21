@@ -50,6 +50,22 @@ module.exports = {
       }
       return res;
    },
+   
+   wordRelation: function(arr,res=[]){
+      arr.forEach(function(item){
+         item_extend=item.split('\t').sort()
+         let len=item_extend.length,wordPair=[]
+         for(i=0;i<len-1;i++){
+            for(j=i+1;j<len;j++){
+               if(item_extend[i]=='') continue;
+               wordPair.push(item_extend[i]+", "+item_extend[j]);
+            }
+         }
+         res=res.concat(wordPair);
+         })
+         return res;
+      },
+         
    // refarr [{name:'參考值",value:'this is a describe may with symbol \t to separate columns'}]   
    // sce['條目'] 用來和參考值比對，並取得 條目對應的 value ==> like excel vlookup
    // refarr 是參考資料全資料集， sce 情境的條目

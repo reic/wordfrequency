@@ -4,4 +4,4 @@ output2.txt
 test.js
 All_input.txt
 Sce_input.txt
-*.txt
+/*.txt
