@@ -13,7 +13,7 @@ keywordCounts=wf.Counting(fcellArr);
 console.log(keywordCounts);
 
 // 計算共現性
-keywordPairArr=wf.wordRelation(ftextArr);
+console.log(keywordPairArr=wf.wordRelation(ftextArr));
 wordRelation=wf.Counting(keywordPairArr);
 console.log(wordRelation);
 

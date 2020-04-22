@@ -51,6 +51,8 @@ module.exports = {
       return res;
    },
    
+   // 計算文字關係的函數
+   // 輸入的格式為 ["aaa\tbbb\tccc\tddd"] 欄位沒有限定
    wordRelation: function(arr,res=[]){
       arr.forEach(function(item){
          item_extend=item.split('\t').sort()
