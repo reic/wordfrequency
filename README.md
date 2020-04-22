@@ -9,7 +9,6 @@ var wf=require('./WordFreq')
 
 * 單詞頻計算，用於生成 Tag Cloud
 * 雙詞頻計算，用於 Social Network Analysis Plot
-* getkeyword 為類似 excel vlookup 的方法，請自行試用
 
 # module 方法介紹
 
@@ -21,5 +20,6 @@ var wf=require('./WordFreq')
 * wordRelation: 計算文字關係的函數, 輸入為 ["aaa\tbbb\tccc","bbb\tccc\tddd"] ， tab 分格欄位，欄位數沒限定。轉換為 ["aaa, bbb", "aaa, ccc", .....]
 * output： 輸出轉換。將 [{name='aaaa',value=3},{name='bbbb',value=1}] => string="3\taaaa\n1\tbbbb\n"  => 3  aaa 換行 1 bbb 換行
 
----
-使用方法請參考 sample/ 範例檔:
+# 使用教學
+
+使用方法請參考 sample/ 目錄的，範例程式與輸入資料格式
