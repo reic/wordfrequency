@@ -6,3 +6,5 @@ All_input.txt
 Sce_input.txt
 /*.txt
 *.csv
+/tmp/*.txt
+/tmp

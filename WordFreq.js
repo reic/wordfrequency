@@ -13,7 +13,7 @@ module.exports = {
    // ['abc\tabc\tabc\t','cde\tcde\tcdt']=>[abc,abc,abc,cde,cde,cde]
    colsTocol: function(arr, res = []) { 
       arr.forEach(function(item){
-         res = res.concat(item.split('\t'))
+         res = res.concat(item.split('\t').map(inner=>inner.trim()))
       }); 
       return res; },
 
@@ -31,6 +31,7 @@ module.exports = {
       return res;
    },
 
+
    // 輸出資料 formating function
    // [{name='aaaa',value=3},{name='bbbb',value=1}]   => string="3\taaaa\n1\tbbbb\n"
    output: function (arr, outputstring = '') {
@@ -45,7 +46,7 @@ module.exports = {
    Arraytwkeyword: function(arr, res = []) {
       for (i = 0; i < arr.length - 1; i++) {
          for (j = i + 1; j < arr.length; j++) {
-            res.push(arr[i] + ", " + arr[j])
+            res.push(arr[i].trim() + ", " + arr[j].trim())
          }
       }
       return res;
@@ -59,8 +60,8 @@ module.exports = {
          let len=item_extend.length,wordPair=[]
          for(i=0;i<len-1;i++){
             for(j=i+1;j<len;j++){
-               if(item_extend[i]=='') continue;
-               wordPair.push(item_extend[i]+", "+item_extend[j]);
+               if(item_extend[i].trim()=='') continue;
+               wordPair.push(item_extend[i].trim()+", "+item_extend[j].trim());
             }
          }
          res=res.concat(wordPair);
