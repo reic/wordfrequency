@@ -32,11 +32,21 @@ module.exports = {
    },
 
 
-   // 輸出資料 formating function
+   // 輸出資料 formating function :obj =>string
    // [{name='aaaa',value=3},{name='bbbb',value=1}]   => string="3\taaaa\n1\tbbbb\n"
    output: function (arr, outputstring = '') {
       arr.forEach(function (item){
          outputstring += item.value + "\t" + item.name + "\n";
+         }); 
+      return outputstring;
+   },
+   // 輸出資料, 將 arr 轉為 string
+
+   outputArr: function (arr,sep="\t",col=1, outputstring = '') {
+      arr.forEach(function (item){
+         if(col!=1){ 
+            outputstring+=item.split(sep).join('\t')+"\n";return;}
+         outputstring += item+"\n";
          }); 
       return outputstring;
    },
