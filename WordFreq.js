@@ -43,11 +43,9 @@ module.exports = {
    // 輸出資料, 將 arr 轉為 string
 
    outputArr: function (arr,sep="\t",col=1, outputstring = '') {
-      arr.forEach(function (item){
-         if(col!=1){ 
-            outputstring+=item.split(sep).join('\t')+"\n";return;}
-         outputstring += item+"\n";
-         }); 
+      if (col==1) return outputstring=arr.join("\n");
+
+      outputstring=arr.map(item=>item.split(sep).join("\t")).join("\n")
       return outputstring;
    },
 
