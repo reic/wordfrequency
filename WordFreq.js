@@ -34,7 +34,7 @@ module.exports = {
 
    // 輸出資料 formating function :obj =>string
    // [{name='aaaa',value=3},{name='bbbb',value=1}]   => string="3\taaaa\n1\tbbbb\n"
-   output: function (arr, outputstring = '') {
+   outputObj: function (arr, outputstring = '') {
       arr.forEach(function (item){
          outputstring += item.value + "\t" + item.name + "\n";
          }); 
