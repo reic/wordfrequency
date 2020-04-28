@@ -1,6 +1,7 @@
 # WordFreq 模組
 
 模組僅在 Nodejs 的環境下測試過。
+
 做 TAB 分隔的詞頻計算，可以計算單詞的數量，雙詞共現的關係，使用的方法為
 ```javascript
 var wf=require('./WordFreq')
