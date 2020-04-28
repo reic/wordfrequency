@@ -18,7 +18,8 @@ var wf=require('./WordFreq')
 * Counting： 計算矩陣內的字詞出現次數，例 ['a','a','b'] = >[{name:'a',value=2},{name:'b',value=1}]
 * Arraytwkeyword： 將 ["aaa","bbb","ccc", "ddd"] 轉換為 ["aaa, bbb", "aaa, ccc", "aaa, ddd", "bbb, ccc", "bbb, ddd", "ccc, ddd"]
 * wordRelation: 計算文字關係的函數, 輸入為 ["aaa\tbbb\tccc","bbb\tccc\tddd"] ， tab 分格欄位，欄位數沒限定。轉換為 ["aaa, bbb", "aaa, ccc", .....]
-* output： 輸出轉換。將 [{name='aaaa',value=3},{name='bbbb',value=1}] => string="3\taaaa\n1\tbbbb\n"  => 3  aaa 換行 1 bbb 換行
+* outputobj： 輸出轉換。將 [{name='aaaa',value=3},{name='bbbb',value=1}] => string="3\taaaa\n1\tbbbb\n"  => 3  aaa 換行 1 bbb 換行
+* outputArr(arr[,sep,col]): 輸出轉換。 arr 為輸入的一維陣陣["aaa","bbb"]=> string="aaa\nbbbb\n"。sep, col 可不輸入。 sep 指 string 的分割字元， col 預設 1 ，若需要透過  sep 分割成多欄，請輸入 > 1 的任意值。
 
 # 使用教學
 
